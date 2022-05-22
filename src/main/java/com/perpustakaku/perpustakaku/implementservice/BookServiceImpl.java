@@ -8,6 +8,7 @@ package com.perpustakaku.perpustakaku.implementservice;
 import com.perpustakaku.perpustakaku.entities.Book;
 import com.perpustakaku.perpustakaku.interfaceservice.BookServiceInterface;
 import com.perpustakaku.perpustakaku.repositories.BookRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,5 +27,9 @@ public class BookServiceImpl implements BookServiceInterface {
     }
     public Book save(Book book) {
         return bookRepo.save(book);
+    }
+    @Override
+    public List<Book> findById(int id) {
+        return bookRepo.findBookById(id);
     }
 }

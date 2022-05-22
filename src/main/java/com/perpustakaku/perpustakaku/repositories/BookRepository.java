@@ -7,6 +7,7 @@ package com.perpustakaku.perpustakaku.repositories;
 
 import com.perpustakaku.perpustakaku.entities.Book;
 import java.io.Serializable;
+import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -19,4 +20,7 @@ import org.springframework.stereotype.Repository;
 public interface BookRepository extends CrudRepository<Book, Integer> {
     @Query(value = "SELECT * FROM `book`", nativeQuery = true)
     public Iterable<Book> tampilaktif();
+    
+     @Query(value = "SELECT * FROM `book` WHERE id = ?", nativeQuery = true)
+    public List<Book> findBookById(int id);
 }

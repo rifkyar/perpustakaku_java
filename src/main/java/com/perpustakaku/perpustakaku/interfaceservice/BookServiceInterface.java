@@ -6,6 +6,7 @@
 package com.perpustakaku.perpustakaku.interfaceservice;
 
 import com.perpustakaku.perpustakaku.entities.Book;
+import java.util.List;
 
 /**
  *
@@ -13,4 +14,5 @@ import com.perpustakaku.perpustakaku.entities.Book;
  */
 public interface BookServiceInterface {
     Iterable<Book> getAll();
+    List<Book> findById(int id);
 }
